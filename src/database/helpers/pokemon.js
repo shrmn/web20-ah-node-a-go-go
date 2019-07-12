@@ -18,6 +18,7 @@ async function insertPokemon(pokemon) {
       type: pokemon.type || "default",
       fighting_style: pokemon.fighting_style || "default"
     })
+    .into("pokemon")
     .returning("id")
     .then(res => {
       return { id: res[0] };
